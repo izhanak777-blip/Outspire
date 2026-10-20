@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Outspire — Meaningful Connections & Curated Small Gatherings</title>
+  <meta name="title" content="Outspire — Meaningful Connections & Curated Small Gatherings" />
+  <meta name="description" content="Turn unfamiliar moments into lively conversations, shared laughter, and lasting friendships. Meetups in cafés, restaurants, playgrounds, parks, walks, or wherever you want to gather — with zero social pressure." />
+  <meta name="keywords" content="outspire, small gatherings, make new friends, social dining nyc, curated dinner meetup, veselka meetup, social confidence, low pressure networking" />
+  <meta name="author" content="Outspire Inc." />
+  <meta name="theme-color" content="#12100E" />
+  <link rel="canonical" href="https://outspire.example.com/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://outspire.example.com/" />
+  <meta property="og:title" content="Outspire — Real-World Meetups for Every Passion & Local Events" />
+  <meta property="og:description" content="Meaningful connections and enjoyable meetings. Join or host real-world meetups for any passion or activity—from cozy café tables to outdoor sports, fitness, creative hobbies, and community events." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Outspire — Real-World Meetups & Community Events" />
+  <meta name="twitter:description" content="Turn unfamiliar moments into real friendships with real-world meetups for any activity, passion, or community gathering." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Google Fonts: Plus Jakarta Sans, Playfair Display & Playwrite US Modern -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Playwrite+US+Modern:wght@100..400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Leaflet Map Stylesheet -->
+  <link rel="stylesheet" href="leaflet.css" />
+  <!-- External Stylesheet with Cream Accent System -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Maps JavaScript API Dynamic Bootstrap Loader -->
+  <script>
+    // Source: Google Maps Platform Code Assist
+    window.loadGoogleMapsScript = function(apiKey) {
+      if (window.google && window.google.maps && window.google.maps.importLibrary) return;
+      (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+        key: apiKey || "",
+        v: "weekly"
+      });
+    };
+    // Only invoke Google Maps loader if a valid key is provided in localStorage or global
+    try {
+      const _storedGKey = (typeof window !== "undefined" && window.GOOGLE_MAPS_API_KEY) || (typeof localStorage !== "undefined" && localStorage.getItem("GOOGLE_MAPS_API_KEY"));
+      if (_storedGKey && _storedGKey.trim().length > 5) {
+        window.loadGoogleMapsScript(_storedGKey.trim());
+      }
+    } catch (e) {
+      console.warn("Maps loader config notice:", e);
+    }
+  </script>
+
+  <!-- JSON-LD Structured Data for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://outspire.example.com/#website",
+        "url": "https://outspire.example.com/",
+        "name": "Outspire",
+        "description": "Small gatherings, welcoming places, new faces and meaningful real-world connections.",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://outspire.example.com/#organization",
+        "name": "Outspire",
+        "url": "https://outspire.example.com/",
+        "email": "outspire@gmail.com",
+        "logo": "https://outspire.example.com/logo.png",
+        "sameAs": [
+          "https://twitter.com/outspire",
+          "https://instagram.com/outspire"
+        ]
+      },
+      {
+        "@type": "Event",
+        "name": "Lunch Meetup at Veselka",
+        "startDate": "2026-02-15T13:00:00-05:00",
+        "endDate": "2026-02-15T15:00:00-05:00",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Veselka Restaurant",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "144 2nd Ave",
+            "addressLocality": "New York",
+            "postalCode": "10003",
+            "addressRegion": "NY",
+            "addressCountry": "US"
+          }
+        },
+        "description": "A relaxed meetup bringing strangers together over warm Ukrainian comfort food in the East Village.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-02-01T00:00:00-05:00"
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Outspire",
+          "url": "https://outspire.example.com"
+        }
+      },
+      {
+        "@type": "Event",
+        "name": "Dining Meetup at Oceana",
+        "startDate": "2026-02-11T20:00:00-05:00",
+        "endDate": "2026-02-11T22:30:00-05:00",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Oceana Restaurant",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "120 W, 49th St",
+            "addressLocality": "New York",
+            "postalCode": "10020",
+            "addressRegion": "NY",
+            "addressCountry": "US"
+          }
+        },
+        "description": "An intimate evening dinner for strangers who appreciate good culinary taste and warm ambiance.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       Header & Sticky Navigation Bar
+       ========================================================================= -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#hero" class="brand-logo" aria-label="Outspire Home">
+        <span class="brand-logo-text">Out<span class="brand-logo-accent">spire</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links: Clean Section Links (No Meetups / Host duplicates) -->
+      <nav class="nav-links" role="navigation" aria-label="Main Navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#community" class="nav-link">Community</a>
+        <a href="#safety" class="nav-link">Safety</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <!-- Actions & Utility Controls -->
+      <div class="header-actions">
+        <!-- Theme Toggle Button (Light/Dark with Cream Accents) -->
+        <button class="btn-icon" id="themeToggleBtn" aria-label="Toggle theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+          </svg>
+        </button>
+
+        <!-- Profile Logo / Photo Button (No name text) -->
+        <button class="nav-profile-btn open-auth-btn" id="headerProfileBtn" title="Account & Profile" aria-label="Account & Profile">
+          <div class="nav-profile-avatar-circle" id="headerNavAvatar">
+            <svg class="nav-profile-logo-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </button>
+        <button class="header-quiz-sign-btn" id="openQuizHeaderBtn" title="Open Questionnaire">
+          <span class="quiz-sign-icon">📋</span>
+          <span>Questionnaire</span>
+        </button>
+        <a href="#meetups" class="btn btn-primary btn-sm">Get Started</a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Dropdown Drawer -->
+  <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links">
+      <a href="#hero" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">What Is Outspire</a>
+      <a href="#how-it-works" class="nav-link">How It Works</a>
+      <a href="#quiz" class="nav-link" id="mobileQuizLink">📋 Questionnaire</a>
+      <a href="#community" class="nav-link">Community Profiles</a>
+      <a href="#safety" class="nav-link">Safety Guidelines</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </div>
+    <div style="display: flex; gap: 12px; margin-top: 14px; align-items: center;">
+      <button class="nav-profile-btn open-auth-btn" id="mobileProfileBtn" title="Account & Profile" aria-label="Account & Profile">
+        <div class="nav-profile-avatar-circle">
+          <svg class="nav-profile-logo-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+      </button>
+      <a href="#meetups" class="btn btn-primary btn-sm" style="flex: 1; text-align: center; justify-content: center;">Get Started</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- =======================================================================
+         1. Hero Section
+         ======================================================================= -->
+    <section id="hero" class="hero-section" aria-labelledby="heroTitle">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <span class="section-tag">Welcoming Places · New Faces · Real Friends</span>
+            <h1 id="heroTitle" class="hero-title">
+              Meaningful connections, <span class="hero-highlight">social confidence</span>, and enjoyable meetings.
+            </h1>
+            <p class="hero-lead">
+              Small gatherings, welcoming places, new faces and new connections. Your comfort and enjoyment are our first priority. Begin with confidence.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#meetups" class="btn btn-primary" id="heroExploreBtn">
+                Explore Gatherings
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#host-section" class="btn btn-secondary" id="heroHostBtn">
+                Host a Meetup
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Visual: Full Frame Photo Showcase -->
+          <div class="hero-visual">
+            <div class="hero-photo-frame">
+              <img 
+                id="heroPhotoImg"
+                src="meetup-gathering.jpg" 
+                alt="Small group of diverse strangers enjoying dinner conversation, wine, and laughter together at an intimate bistro table" 
+                class="hero-photo-img"
+                width="640"
+                height="480"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>2–10 People</h3>
+            <p>Flexible group sizes: pick what matches your social comfort</p>
+          </div>
+          <div class="stat-item">
+            <h3>3-Hour Policy</h3>
+            <p>Free cancellation up to 3 hrs before · No cancellation after 3 hrs to prevent ghosting</p>
+          </div>
+          <div class="stat-item">
+            <h3>100% Safe</h3>
+            <p>Every person's profile is verified · Zero tolerance for harassment or sales pitches</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         2. About Section: "What is Outspire?" (Wireframe Narrative)
+         ======================================================================= -->
+    <section id="about" class="about-section" aria-labelledby="aboutTitle">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <span class="section-tag">Our Mission & Heart</span>
+            <h2 id="aboutTitle" class="section-title">What is Outspire?</h2>
+            
+            <p class="about-text-paragraph">
+              Our startup brings strangers together in real-world spaces and turns unfamiliar moments into lively conversations, shared laughter, and lasting friendships.
+            </p>
+            
+            <p class="about-text-paragraph">
+              In a world where social circles often stay small and online interactions replace real conversations, we create opportunities for people to meet face to face wherever they want to gather — whether that's at a café, restaurant, playground, park, going for a walk, or any other place or activity members choose. Meetups are never limited to just one kind of venue; they happen wherever people feel like connecting.
+            </p>
+            
+            <p class="about-text-paragraph">
+              We thoughtfully bring together people in welcoming, comfortable gatherings where conversations flow naturally and without pressure. The focus is never on speed, performance, or forced networking, but on genuine human interaction — talking, listening, sharing stories, and slowly getting to know one another.
+            </p>
+
+            <p class="about-text-paragraph">
+              Whether you are hosting or joining a meetup or event, Outspire is about turning unfamiliar faces into familiar ones and helping real friendships grow from simple, authentic real-world experiences.
+            </p>
+          </div>
+
+          <div class="about-pillars">
+            <div class="pillar-card">
+              <div class="pillar-icon">📍</div>
+              <h3 class="pillar-title">Any Place You Choose</h3>
+              <p class="pillar-desc">
+                Cafés, restaurants, playgrounds, parks, scenic walks, or anywhere you want to meet. Gatherings happen wherever people feel like gathering.
+              </p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-icon">👥</div>
+              <h3 class="pillar-title">Thoughtful Group Sizes</h3>
+              <p class="pillar-desc">
+                Up to 10 people at max for café and restaurant tables to keep conversations personal, and flexible open group sizes for walks, playgrounds, sports, and events.
+              </p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-icon">✨</div>
+              <h3 class="pillar-title">Zero Performance</h3>
+              <p class="pillar-desc">
+                No awkward elevator pitches or business card exchanges. Share life stories, listen openly, and enjoy natural chemistry.
+              </p>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-icon">🛡️</div>
+              <h3 class="pillar-title">Comfort First</h3>
+              <p class="pillar-desc">
+                Your comfort is our top priority. Change of plans? Cancel with 1 click up to 3 hours before without any hassle.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. How It Works (4 Interactive Steps)
+         ======================================================================= -->
+    <section id="how-it-works" class="how-section" aria-labelledby="howTitle">
+      <div class="container" style="text-align: center;">
+        <span class="section-tag">Step-by-Step Experience</span>
+        <h2 id="howTitle" class="section-title">How it works</h2>
+        <p class="section-desc" style="margin: 0 auto;">
+          Designed around social ease, confidence, and real-world connection. Here is how simple it is to sit down with your next good friend.
+        </p>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Tell Us Your Style</h3>
+            <p class="step-desc">
+              Answer our quick, thoughtful identity & conversation preferences questionnaire so we understand your ideal group dynamic.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Discover or Match</h3>
+            <p class="step-desc">
+              Filter upcoming gatherings by day, time, and neighborhood in your city, or let our matching engine match you to a balanced table.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Reserve Your Seat</h3>
+            <p class="step-desc">
+              Lock in your spot with 1-click confirmation. View fellow verified attendees, venue directions, and unlock your private group chat.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Show Up & Enjoy</h3>
+            <p class="step-desc">
+              Arrive at the meetup spot or venue, greet your host and fellow members, enjoy the activity or conversation, and turn strangers into familiar friends.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         5. Meetups Discovery & Booking Engine (Wireframe Listings & Filters)
+         ======================================================================= -->
+    <section id="meetups" class="meetups-section" aria-labelledby="meetupsHeading">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; margin-bottom: 28px;">
+          <div>
+            <span class="section-tag">Curated Real-World Gatherings</span>
+            <h2 id="meetupsHeading" class="section-title" style="margin-bottom: 6px;">Explore & Book Meetups</h2>
+            <p style="color: var(--text-secondary);" id="meetupsCountDisplay">6 Gatherings Available</p>
+          </div>
+
+          <!-- Curated Surprise Meetup Matcher -->
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <button class="btn btn-primary btn-sm surprise-btn-pulse" id="surpriseMeetupBtn" title="Request a Surprise Meetup tailored to your questionnaire answers">
+              🎁 Surprise Meetup
+            </button>
+            <button class="btn btn-ghost btn-sm" id="clearFiltersBtn">
+              Clear Filters
+            </button>
+          </div>
+        </div>
+
+        <!-- Discovery Filter Controls -->
+        <div class="discovery-controls">
+          <!-- Category Tabs -->
+          <div class="filter-tabs" id="filterTabsContainer" role="tablist" aria-label="Meetup Categories">
+            <button class="filter-tab active" data-category="all" role="tab">All Meetups</button>
+            <button class="filter-tab" data-category="reserved" role="tab">
+              🎟️ Reserved Meetups <span class="badge-count" id="reservedCountBadge">0</span>
+            </button>
+            <button class="filter-tab" data-category="dining" role="tab">🍽️ Dining & Cafés (Max 10)</button>
+            <button class="filter-tab" data-category="active" role="tab">🏃 Active & Fitness</button>
+            <button class="filter-tab" data-category="sports" role="tab">⚽ Sports & Recreation</button>
+            <button class="filter-tab" data-category="outdoors" role="tab">🌳 Parks & Outdoors</button>
+            <button class="filter-tab" data-category="event" role="tab">🎉 Community Events</button>
+            <button class="filter-tab" data-category="booked" role="tab">
+              📋 History <span class="badge-count" id="historyCountBadge">0</span>
+            </button>
+            <button class="filter-tab" data-category="saved" role="tab">
+              🔖 Saved for Later <span class="badge-count" id="savedCountBadge">0</span>
+            </button>
+          </div>
+
+          <!-- Filter Search & Dropdowns Grid -->
+          <div class="filter-inputs-grid">
+            <div class="input-with-icon">
+              <span class="input-icon">🔍</span>
+              <input 
+                type="search" 
+                id="meetupSearchInput" 
+                placeholder="Search by code (e.g. MEET-1001), venue, activity, city..." 
+                aria-label="Search meetups or enter meetup code"
+              />
+            </div>
+
+            <div class="input-with-icon">
+              <span class="input-icon">📅</span>
+              <select id="dayFilterSelect" aria-label="Filter by Day (4-Day Window)">
+                <option value="all">Any of 4 Days (Today – Wed)</option>
+                <option value="day:0">Today (Sun, Oct 18)</option>
+                <option value="day:1">Tomorrow (Mon, Oct 19)</option>
+                <option value="day:2">Tuesday (Oct 20)</option>
+                <option value="day:3">Wednesday (Oct 21)</option>
+              </select>
+            </div>
+
+            <div class="input-with-icon">
+              <span class="input-icon">📍</span>
+              <select id="locationFilterSelect" aria-label="Filter by Area in Your City">
+                <optgroup label="Your City: New York">
+                  <option value="city:New York">All New York</option>
+                  <option value="area:Manhattan">↳ Manhattan</option>
+                  <option value="area:Brooklyn">↳ Brooklyn</option>
+                  <option value="area:Queens">↳ Queens</option>
+                  <option value="area:Hoboken">↳ Hoboken / Hudson</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="input-with-icon">
+              <span class="input-icon">⏰</span>
+              <select id="timeFilterSelect" aria-label="Filter by Time Window">
+                <option value="all">Any Time (All Day)</option>
+                <optgroup label="Choose Between Time Window">
+                  <option value="6-9">Between 6:00 AM to 9:00 AM (Early Morning)</option>
+                  <option value="9-12">Between 9:00 AM to 12:00 PM (Morning & Coffee)</option>
+                  <option value="12-15">Between 12:00 PM to 3:00 PM (Lunch & Midday)</option>
+                  <option value="15-18">Between 3:00 PM to 6:00 PM (Afternoon & Walks)</option>
+                  <option value="18-21">Between 6:00 PM to 9:00 PM (Dinner & Evening)</option>
+                  <option value="21-24">Between 9:00 PM to 12:00 AM (Night & Late)</option>
+                </optgroup>
+                <optgroup label="Custom Time Window">
+                  <option value="custom">⚙️ Custom Range (Between This to This...)</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="input-with-icon">
+              <span class="input-icon">👥</span>
+              <select id="groupSizeFilterSelect" aria-label="Filter by Group Size">
+                <option value="all">Any Group Size</option>
+                <option value="2">2 People (Pair)</option>
+                <option value="3-4">3–4 People (Small Table)</option>
+                <option value="5-6">5–6 People (Medium Circle)</option>
+                <option value="7-10">7–10 People (Large Table)</option>
+                <option value="10+">10+ People (Community Group)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive "Between This to This" Time Range Bar -->
+        <div id="customTimeRangeBar" class="custom-time-range-bar" style="display: none;" role="region" aria-label="Custom time range filter">
+          <div class="custom-time-range-inner">
+            <div class="custom-time-header">
+              <span class="time-range-icon">⏰</span>
+              <div>
+                <strong style="color: var(--text-primary); font-size: 0.92rem;">Choose Meetup Time Window</strong>
+                <span style="display: block; font-size: 0.78rem; color: var(--text-muted);">Pick any start and end time to find meetups happening between those hours</span>
+              </div>
+            </div>
+            <div class="custom-time-inputs-group">
+              <div class="time-input-field">
+                <label for="timeRangeStartSelect" class="time-field-label">Between (From)</label>
+                <select id="timeRangeStartSelect" class="time-picker-select">
+                  <option value="06:00">06:00 AM</option>
+                  <option value="07:00">07:00 AM</option>
+                  <option value="08:00">08:00 AM</option>
+                  <option value="08:30">08:30 AM</option>
+                  <option value="09:00">09:00 AM</option>
+                  <option value="10:00" selected>10:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="13:00">01:00 PM</option>
+                  <option value="14:00">02:00 PM</option>
+                  <option value="15:00">03:00 PM</option>
+                  <option value="15:30">03:30 PM</option>
+                  <option value="16:00">04:00 PM</option>
+                  <option value="17:00">05:00 PM</option>
+                  <option value="17:30">05:30 PM</option>
+                  <option value="18:00">06:00 PM</option>
+                  <option value="19:00">07:00 PM</option>
+                  <option value="20:00">08:00 PM</option>
+                  <option value="21:00">09:00 PM</option>
+                  <option value="22:00">10:00 PM</option>
+                </select>
+              </div>
+              <span class="time-range-to-badge">to</span>
+              <div class="time-input-field">
+                <label for="timeRangeEndSelect" class="time-field-label">Until (To)</label>
+                <select id="timeRangeEndSelect" class="time-picker-select">
+                  <option value="08:00">08:00 AM</option>
+                  <option value="09:00">09:00 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="13:00">01:00 PM</option>
+                  <option value="14:00">02:00 PM</option>
+                  <option value="15:00">03:00 PM</option>
+                  <option value="16:00">04:00 PM</option>
+                  <option value="17:00">05:00 PM</option>
+                  <option value="18:00" selected>06:00 PM</option>
+                  <option value="19:00">07:00 PM</option>
+                  <option value="20:00">08:00 PM</option>
+                  <option value="21:00">09:00 PM</option>
+                  <option value="22:00">10:00 PM</option>
+                  <option value="23:00">11:00 PM</option>
+                  <option value="24:00">12:00 AM (Midnight)</option>
+                </select>
+              </div>
+              <button type="button" class="btn btn-primary btn-sm" id="applyCustomTimeBtn" style="padding: 7px 16px;">
+                Apply Range
+              </button>
+              <button type="button" class="btn btn-ghost btn-sm" id="clearCustomTimeBtn" style="padding: 7px 12px;">
+                ✕ Any Time
+              </button>
+            </div>
+            <div id="activeTimeWindowNotice" class="active-time-window-notice" style="display: none;"></div>
+          </div>
+        </div>
+
+        <!-- Dynamic City & Area Neighborhood Filter Bar -->
+        <div id="cityAreaFilterBar" class="city-area-filter-bar" role="region" aria-label="City and neighborhood area filters">
+          <!-- Populated dynamically based on user's questionnaire city/country -->
+        </div>
+
+        <!-- History Filter & Actions Bar (Shown when History is active) -->
+        <div id="historyControlsBar" class="history-controls-bar" style="display: none;" role="region" aria-label="History options and actions">
+          <!-- Populated dynamically by renderMeetups() -->
+        </div>
+
+        <!-- Meetup Cards Grid rendered by app.js -->
+        <div class="meetups-grid" id="meetupsGrid" role="region" aria-live="polite">
+          <!-- Dynamic event cards injected here -->
+        </div>
+
+        <!-- Host Callout Banner -->
+        <div class="host-callout-banner">
+          <div class="host-callout-content">
+            <div class="host-callout-icon">📍</div>
+            <div>
+              <h3 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 4px;">Want to host a meetup for your favorite activity?</h3>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">Whatever activity you love—cafés, outdoor sports, fitness, creative hobbies, games, or community events. Drop your pin on Google Maps, set your group size, and welcome new faces.</p>
+            </div>
+          </div>
+          <a href="#host-section" class="btn btn-secondary btn-sm" style="white-space: nowrap;">Host a Meetup</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. Host a Meetup Section & Interactive Map Studio
+         ======================================================================= -->
+    <section id="host-section" class="host-section" aria-labelledby="hostSectionTitle">
+      <div class="container">
+        <div class="section-header text-center" style="max-width: 760px; margin: 0 auto 48px;">
+          <span class="section-tag">Host a Meetup or Event</span>
+          <h2 id="hostSectionTitle" class="section-title">Host Your Own Meetup</h2>
+          <p class="section-desc">
+            No venue booking hassle from our side. Pick any spot on Google Maps—anywhere you want meetup. Cafés & dining tables are capped at 10 max; any other activity or event can welcome up to 100+ at max!
+          </p>
+        </div>
+
+        <div class="host-studio-grid">
+          <!-- Left Column: Host Studio Form -->
+          <div class="host-form-col">
+            <form id="createMeetupForm" class="host-form" novalidate>
+              
+              <!-- Block 1: Gathering Details -->
+              <div class="host-form-block">
+                <div class="block-header">
+                  <div class="block-step-num">1</div>
+                  <div>
+                    <h3 class="block-title">Gathering Vibe & Details</h3>
+                    <p class="block-subtitle">Give your meetup an inviting name and conversation pace.</p>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="hostMeetupTitle" class="form-label">Meetup Title <span class="required">*</span></label>
+                  <input 
+                    type="text" 
+                    id="hostMeetupTitle" 
+                    class="form-control" 
+                    placeholder="e.g. Sunday Morning Cold Brew & Sci-Fi Chats" 
+                    value="Sunday Coffee & Thoughtful Conversations"
+                    required 
+                    maxlength="75"
+                  />
+                </div>
+
+                <div class="form-row form-row-2">
+                  <div class="form-group">
+                    <label for="hostCategory" class="form-label">Activity / Category</label>
+                    <select id="hostCategory" class="form-control">
+                      <option value="coffee" selected>☕ Coffee & Café Table (Max 10)</option>
+                      <option value="dining">🍽️ Casual Dining & Restaurant (Max 10)</option>
+                      <option value="active">🏃 Active & Fitness (Running, Swimming, Yoga, etc. — Any size)</option>
+                      <option value="sports">⚽ Sports & Recreation (Soccer, Games, etc. — Any size)</option>
+                      <option value="outdoors">🌳 Parks & Outdoors (Walks, Nature, Playgrounds — Any size)</option>
+                      <option value="creative">🎨 Creative & Hobbies (Arts, Photography, Books — Any size)</option>
+                      <option value="nightlife">🎷 Music, Jazz & Lounge (Max 10)</option>
+                      <option value="event">🎉 Community Event & Social Mixer (Any size)</option>
+                      <option value="custom">✨ Other / Custom Activity (Whatever you want — Any size)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hostCapacity" class="form-label">Group Size / Capacity <span class="required">*</span></label>
+                    <select id="hostCapacity" class="form-control">
+                      <option value="2">2 people (Intimate Pair)</option>
+                      <option value="3">3 people (Cozy Trio)</option>
+                      <option value="4">4 people (Small Table)</option>
+                      <option value="5">5 people (Balanced Circle)</option>
+                      <option value="6" selected>6 people (Classic Group)</option>
+                      <option value="7">7 people (Lively Dinner)</option>
+                      <option value="8">8 people (Spacious Group)</option>
+                      <option value="9">9 people (Festive Table)</option>
+                      <option value="10">10 people (Max Café/Dining Limit)</option>
+                    </select>
+
+                    <div id="customCapacityWrapper" style="display: none; margin-top: 10px; padding: 12px 14px; background: rgba(227, 210, 186, 0.05); border: 1px dashed var(--cream-border); border-radius: var(--radius-sm);">
+                      <label for="hostCustomCapacity" class="form-label" style="font-size: 0.8rem; margin-bottom: 6px; color: var(--cream-200); font-weight: 600; display: block;">
+                        Specify Exact Number of People:
+                      </label>
+                      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 6px;">
+                          <input 
+                            type="number" 
+                            id="hostCustomCapacity" 
+                            class="form-control" 
+                            placeholder="e.g. 8" 
+                            min="2" 
+                            max="100" 
+                            style="width: 100px; text-align: center; font-weight: 700; color: var(--cream-100); font-size: 0.98rem;"
+                          />
+                          <span style="font-size: 0.85rem; color: var(--cream-300); font-weight: 600;">people</span>
+                        </div>
+
+                        <!-- Enter button to confirm number of people -->
+                        <button 
+                          type="button" 
+                          id="confirmCustomCapacityBtn" 
+                          class="btn btn-primary btn-sm" 
+                          style="padding: 7px 16px; font-size: 0.82rem; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;"
+                          title="Confirm number of people"
+                        >
+                          <span>Enter</span>
+                          <span style="font-size: 0.75rem; opacity: 0.85;">↵</span>
+                        </button>
+
+                        <!-- Confirmed badge indicator -->
+                        <span id="customCapacityConfirmedBadge" style="display: none; font-size: 0.78rem; font-weight: 600; color: #34d399; background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.3); padding: 4px 10px; border-radius: var(--radius-full); align-items: center; gap: 4px;">
+                          ✓ Confirmed
+                        </span>
+                      </div>
+
+                      <small id="customCapacityHint" style="font-size: 0.76rem; color: var(--cream-300); display: block; margin-top: 6px;">
+                        Enter any specific crowd size (e.g. 18, 35, 75, or 100+ at max). Press Enter to confirm.
+                      </small>
+
+                      <!-- Rule Warning Box -->
+                      <div id="customCapacityRuleWarning" style="display: none; margin-top: 8px; font-size: 0.78rem; color: #fca5a5; background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.3); padding: 6px 10px; border-radius: var(--radius-xs); line-height: 1.4;">
+                        ⚠️ <strong>Rule Limit:</strong> Café and restaurant meetups are strictly capped at 10 people max for table conversation intimacy. Number has been adjusted to 10.
+                      </div>
+                    </div>
+
+                    <small id="capacityHelperText" style="font-size: 0.78rem; color: var(--cream-300); display: block; margin-top: 4px;">
+                      Café and dining meetups are capped at 10 people max for great conversation.
+                    </small>
+                  </div>
+                </div>
+
+                <div class="form-row form-row-2">
+                  <div class="form-group">
+                    <label for="hostMeetupDate" class="form-label">Date <span class="required">*</span></label>
+                    <input 
+                      type="date" 
+                      id="hostMeetupDate" 
+                      class="form-control" 
+                      required 
+                    />
+                    <small id="hostDateHelperText" style="font-size: 0.78rem; color: var(--cream-300); display: block; margin-top: 4px;">
+                      🔒 4-Day Policy: Gatherings can only be scheduled for the next 4 days (Today through Wednesday).
+                    </small>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Meetup Time Window <span class="required">*</span></label>
+                    <div class="host-time-window-row">
+                      <div style="flex: 1;">
+                        <span class="time-sub-label">Between (Start)</span>
+                        <input 
+                          type="time" 
+                          id="hostMeetupTime" 
+                          class="form-control" 
+                          value="14:00" 
+                          required 
+                        />
+                      </div>
+                      <span class="time-to-separator">to</span>
+                      <div style="flex: 1;">
+                        <span class="time-sub-label">Until (End)</span>
+                        <input 
+                          type="time" 
+                          id="hostMeetupEndTime" 
+                          class="form-control" 
+                          value="16:30" 
+                          required 
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="hostDescription" class="form-label">What to Expect & Who Should Join <span class="required">* (Required)</span></label>
+                  <textarea 
+                    id="hostDescription" 
+                    class="form-control" 
+                    rows="3" 
+                    placeholder="e.g. Welcoming all vibes — introverts & extroverts alike! Great for doctors, engineers, entrepreneurs, creatives, or anyone wanting friendly, meaningful conversation..." 
+                    required
+                  >Welcoming all vibes — introverts & extroverts alike! Great for anyone wanting friendly, meaningful conversation over great coffee.</textarea>
+
+                  <!-- Quick Suggestion Tags for Who Should Join -->
+                  <div class="audience-quick-tags" style="margin-top: 8px;">
+                    <span style="font-size: 0.76rem; color: var(--cream-200); font-weight: 600; display: block; margin-bottom: 5px;">
+                      💡 Click to specify who should join:
+                    </span>
+                    <div style="display: flex; flex-wrap: wrap; gap: 6px;" id="audienceVibeChips">
+                      <button type="button" class="preset-chip" data-vibe-tag="🧠 Introverts Welcome">🧠 Introverts</button>
+                      <button type="button" class="preset-chip" data-vibe-tag="⚡ Extroverts & Lively">⚡ Extroverts</button>
+                      <button type="button" class="preset-chip" data-vibe-tag="💻 Tech & Engineers">💻 Engineers</button>
+                      <button type="button" class="preset-chip" data-vibe-tag="🩺 Doctors & Healthcare">🩺 Doctors</button>
+                      <button type="button" class="preset-chip" data-vibe-tag="🚀 Entrepreneurs & Founders">🚀 Entrepreneurs</button>
+                      <button type="button" class="preset-chip" data-vibe-tag="🎨 Creatives & Artists">🎨 Creatives</button>
+                      <button type="button" class="preset-chip" data-vibe-tag="🌍 New in Town">🌍 New in Town</button>
+                      <button type="button" class="preset-chip" data-vibe-tag="🤝 Open to Everyone">🤝 Everyone</button>
+                    </div>
+                  </div>
+
+                  <small style="font-size: 0.76rem; color: var(--cream-300); display: block; margin-top: 6px; opacity: 0.9;">
+                    Mandatory: Describe who should join (e.g. introverts, engineers, entrepreneurs, doctors) and the table vibe so guests know it's a great fit for them.
+                  </small>
+                </div>
+              </div>
+
+              <!-- Block 2: Interactive Google Maps Location Picker -->
+              <div class="host-form-block">
+                <div class="block-header">
+                  <div class="block-step-num">2</div>
+                  <div style="flex: 1;">
+                    <h3 class="block-title">Select Meeting Spot on Google Maps</h3>
+                    <p class="block-subtitle">Pick any spot on Google Maps or choose a city quick-jump to set your exact gathering table.</p>
+                  </div>
+                </div>
+
+                <!-- Google Maps Header Bar -->
+                <div class="google-map-header">
+                  <div class="google-map-brand">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="gmap-pin-icon" aria-hidden="true">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#EA4335"/>
+                      <circle cx="12" cy="9" r="2.8" fill="#FFFFFF"/>
+                    </svg>
+                    <span class="gmap-brand-title">Google Maps™</span>
+                    <span class="gmap-status-badge">● Live Google Map</span>
+                  </div>
+                  <div class="google-map-actions" style="display: flex; gap: 8px; align-items: center;">
+                    <button type="button" id="btnToggleMapFullscreen" class="btn btn-ghost btn-xs gmap-header-action-btn" title="Expand Google Map to Fullscreen" aria-label="Toggle Fullscreen" style="text-decoration: none; color: var(--cream-200); border: 1px solid var(--cream-border); border-radius: var(--radius-full); padding: 4px 12px; font-size: 0.74rem; display: inline-flex; align-items: center; gap: 5px; cursor: pointer; background: transparent;">
+                      <svg class="fullscreen-icon-expand" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                      <svg class="fullscreen-icon-collapse" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="display: none;"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path></svg>
+                      <span class="fullscreen-btn-text">Fullscreen</span>
+                    </button>
+                    <a id="openInGoogleMapsBtn" href="https://maps.google.com/?q=40.7291,-73.9872" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-xs gmap-header-action-btn" style="text-decoration: none; color: var(--cream-200); border: 1px solid var(--cream-border); border-radius: var(--radius-full); padding: 4px 12px; font-size: 0.74rem; display: inline-flex; align-items: center; gap: 5px;">
+                      <span>Open in Google Maps</span>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Search Venue on Google Maps -->
+                <div class="gmap-search-bar" style="display: flex; gap: 8px; margin-bottom: 12px;">
+                  <input 
+                    type="text" 
+                    id="gmapQuickSearchInput" 
+                    class="form-control form-control-sm" 
+                    placeholder="🔍 Search café, restaurant, park, or address on Google Maps..." 
+                    style="flex: 1; font-size: 0.84rem; background: var(--bg-surface-elevated); border: 1px solid var(--cream-border);"
+                  />
+                  <button type="button" class="btn btn-primary btn-sm" id="btnGmapSearch" style="white-space: nowrap; font-size: 0.8rem; padding: 6px 14px;">
+                    Find on Google Maps
+                  </button>
+                </div>
+
+                <!-- Global City Quick Presets -->
+                <div class="map-preset-chips" role="group" aria-label="Jump to city on Google Maps">
+                  <span class="preset-label">Jump to City:</span>
+                  <button type="button" class="preset-chip active" data-lat="40.7291" data-lng="-73.9872" data-name="New York" data-city="New York, USA">New York</button>
+                  <button type="button" class="preset-chip" data-lat="51.5074" data-lng="-0.1278" data-name="London" data-city="London, United Kingdom">London</button>
+                  <button type="button" class="preset-chip" data-lat="35.6762" data-lng="139.6503" data-name="Tokyo" data-city="Tokyo, Japan">Tokyo</button>
+                  <button type="button" class="preset-chip" data-lat="48.8566" data-lng="2.3522" data-name="Paris" data-city="Paris, France">Paris</button>
+                  <button type="button" class="preset-chip" data-lat="52.5200" data-lng="13.4050" data-name="Berlin" data-city="Berlin, Germany">Berlin</button>
+                  <button type="button" class="preset-chip" data-lat="-33.8688" data-lng="151.2093" data-name="Sydney" data-city="Sydney, Australia">Sydney</button>
+                  <button type="button" class="preset-chip" data-lat="43.6532" data-lng="-79.3832" data-name="Toronto" data-city="Toronto, Canada">Toronto</button>
+                </div>
+
+                <!-- Google Maps Container Wrapper -->
+                <div class="host-map-wrapper" id="hostMapWrapper">
+                  <!-- Fullscreen Top Floating HUD Bar -->
+                  <div class="gmap-fullscreen-hud" id="gmapFullscreenHud">
+                    <div class="gmap-fullscreen-hud-left">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="gmap-pin-icon" aria-hidden="true">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#EA4335"/>
+                        <circle cx="12" cy="9" r="2.8" fill="#FFFFFF"/>
+                      </svg>
+                      <span class="gmap-brand-title">Google Maps™</span>
+                      <span class="gmap-status-badge">● Fullscreen</span>
+                    </div>
+                    <div class="gmap-fullscreen-hud-search">
+                      <input 
+                        type="text" 
+                        id="gmapFullscreenSearchInput" 
+                        placeholder="🔍 Search café, restaurant, park, or address..." 
+                      />
+                      <button type="button" class="btn btn-primary btn-xs" id="btnGmapFullscreenSearch">
+                        Find Spot
+                      </button>
+                    </div>
+                    <div class="gmap-fullscreen-hud-right">
+                      <a id="fullscreenOpenInGmapBtn" href="https://maps.google.com/?q=40.7291,-73.9872" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-xs" style="color: var(--cream-200); border: 1px solid var(--cream-border); border-radius: var(--radius-full); padding: 4px 10px; font-size: 0.74rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                        <span>Open in Google Maps ↗</span>
+                      </a>
+                      <button type="button" id="btnExitMapFullscreen" class="btn btn-primary btn-xs" style="border-radius: var(--radius-full); padding: 4px 12px; font-size: 0.76rem; display: inline-flex; align-items: center; gap: 5px; cursor: pointer;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path></svg>
+                        <span>Exit Fullscreen</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Floating corner fullscreen toggle button directly on map -->
+                  <button type="button" id="btnFloatingMapFullscreen" class="gmap-floating-fullscreen-btn" title="Toggle Fullscreen" aria-label="Toggle Fullscreen">
+                    <svg class="fullscreen-icon-expand" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                    <svg class="fullscreen-icon-collapse" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="display: none;"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path></svg>
+                  </button>
+
+                  <div id="hostLocationMap" class="host-map-container" aria-label="Interactive venue Google Maps location picker">
+                    <!-- Interactive Google Maps Leaflet Canvas injected by app.js -->
+                  </div>
+                  <div class="map-instruction-overlay" id="mapInstructionOverlay">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    <span id="mapInstructionText">📍 Click any place on the map to select & autofill down options</span>
+                  </div>
+                </div>
+
+                <!-- Venue Fields (Populated by Map Geocoding or Manual Entry) -->
+                <div class="form-row form-row-2" style="margin-top: 16px;">
+                  <div class="form-group">
+                    <label for="hostVenueName" class="form-label">Venue / Spot Name <span class="required">*</span></label>
+                    <input 
+                      type="text" 
+                      id="hostVenueName" 
+                      class="form-control" 
+                      placeholder="e.g. Hyde Park Pavilion / Abraço Espresso / Shibuya Garden" 
+                      value="The Roastery Café"
+                      required 
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hostNeighborhood" class="form-label">City, Area / Country <span class="required">*</span></label>
+                    <input 
+                      type="text" 
+                      id="hostNeighborhood" 
+                      class="form-control" 
+                      placeholder="e.g. London, UK / Tokyo, Japan / New York, USA" 
+                      value="Brooklyn, New York"
+                      required 
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="hostVenueAddress" class="form-label">Street Address <span class="required">*</span></label>
+                  <input 
+                    type="text" 
+                    id="hostVenueAddress" 
+                    class="form-control" 
+                    placeholder="Auto-fills from map pin or enter exact address..." 
+                    value="42 Bedford Ave, Brooklyn, NY 11249"
+                    required 
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="hostVenueNotes" class="form-label">Spot Tip / How Guests Find You <span class="optional">(Optional)</span></label>
+                  <input 
+                    type="text" 
+                    id="hostVenueNotes" 
+                    class="form-control" 
+                    placeholder="e.g. Look for the corner table near the window with a red notebook" 
+                    value="Look for the corner wood table near the sunlit window."
+                  />
+                  <small style="font-size: 0.76rem; color: var(--cream-300); display: block; margin-top: 4px; opacity: 0.85;">Optional clue to help guests easily locate your spot or table.</small>
+                </div>
+
+                <!-- Hidden coordinates -->
+                <input type="hidden" id="hostLat" value="40.7291" />
+                <input type="hidden" id="hostLng" value="-73.9872" />
+              </div>
+
+              <!-- Block 3: Host Identity & Photo Selection -->
+              <div class="host-form-block">
+                <div class="block-header">
+                  <div class="block-step-num">3</div>
+                  <div>
+                    <h3 class="block-title">Your Host Profile & Photo</h3>
+                    <p class="block-subtitle">Let guests know who is greeting them and choose an ambiance cover image.</p>
+                  </div>
+                </div>
+
+                <div class="host-profile-auto-badge">
+                  <div class="host-profile-auto-left">
+                    <div class="host-profile-avatar-thumb" id="hostProfileAutoAvatar">
+                      <!-- Populated dynamically from profile -->
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                    </div>
+                    <div class="host-profile-auto-meta">
+                      <span class="host-profile-auto-pill">✓ Added automatically by your profile</span>
+                      <h4 class="host-profile-auto-name" id="hostProfileAutoName">Tom K.</h4>
+                      <span class="host-profile-auto-details" id="hostProfileAutoDetails">Verified Member · New York</span>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-secondary btn-xs" id="btnEditProfileFromHost" title="Edit your name or details in Member Passport Profile">
+                    ✏️ Edit Profile
+                  </button>
+                </div>
+
+                <div class="form-group" style="margin-top: 14px;">
+                  <label for="hostRole" class="form-label">Gathering Vibe or Topic <span class="optional">(Optional)</span></label>
+                  <input 
+                    type="text" 
+                    id="hostRole" 
+                    class="form-control" 
+                    placeholder="e.g. Coffee lover, indie music & friendly conversation" 
+                    value="Coffee lover, indie music & friendly conversation"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Choose Cover Photo for Gathering</label>
+                  <div class="photo-selector-grid" id="photoSelectorGrid" role="radiogroup" aria-label="Select meetup cover photo">
+                    <!-- Injected dynamically from HOST_CURATED_PHOTOS -->
+                  </div>
+                  <input type="hidden" id="hostSelectedPhoto" value="meetup-gathering.jpg" />
+                </div>
+              </div>
+
+              <!-- Submit Actions -->
+              <div class="host-submit-actions">
+                <button type="submit" class="btn btn-primary btn-lg" id="publishMeetupBtn" style="width: 100%; justify-content: center;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"></path></svg>
+                  Publish Community Meetup
+                </button>
+                <p class="submit-disclaimer">
+                  ✓ Community-hosted gatherings. No restaurant booking hassle—you pick the venue and welcome your guests.
+                </p>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Right Column: Live Guest Preview Card -->
+          <div class="host-preview-col">
+            <div class="sticky-preview-wrapper">
+              <div class="preview-badge-header">
+                <span class="preview-badge-title">Live Guest Preview</span>
+                <span class="preview-status-pill">● Updates Live</span>
+              </div>
+
+              <div class="meetup-card preview-card-live" id="hostPreviewCard">
+                <!-- Dynamically rendered live preview card -->
+              </div>
+
+              <div class="preview-host-guidelines">
+                <h4>Hosting Tips for a Warm Table</h4>
+                <ul>
+                  <li>Arrive 10 minutes early to claim your spot or table.</li>
+                  <li>Greet each person warmly as they arrive with a friendly smile.</li>
+                  <li>Keep conversation inclusive and natural—no pressure to pitch or perform.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. Community & Member Spotlight (Wireframe Profile: Tom & Community)
+         ======================================================================= -->
+    <section id="community" class="community-section" aria-labelledby="communityTitle">
+      <div class="container">
+        <span class="section-tag">Community & Feedback</span>
+        <h2 id="communityTitle" class="section-title">See How Your Profile Looks — and Read Member Feedback</h2>
+        <p class="section-desc">
+          Get a transparent look at how your profile appears to other attendees at your table or walk, and read honest feedback from people who connect through Outspire every week.
+        </p>
+
+        <div class="community-grid">
+          <!-- Left Column: Example Profile Preview -->
+          <div class="profile-preview-column">
+            <div class="col-header-bar">
+              <span class="preview-badge">
+                <span>👤</span> Example: How Your Profile Looks
+              </span>
+            </div>
+
+            <!-- Wireframe Profile Spotlight: Example Profile -->
+            <div class="profile-card-preview" id="exampleProfileCard">
+              <div class="profile-example-banner">
+                <span>🔒 Circle Member Preview (No private info shared)</span>
+                <span style="color: var(--status-success); font-weight: 600;">● Active Member</span>
+              </div>
+
+              <div class="profile-header-preview">
+                <div class="profile-avatar-wrapper" id="previewAvatarWrapper">
+                  <img 
+                    id="previewAvatarImg"
+                    src="" 
+                    alt="Member profile picture" 
+                    class="profile-avatar-large"
+                    loading="lazy"
+                    width="72"
+                    height="72"
+                    style="display: none;"
+                  />
+                  <div id="previewAvatarLogo" class="profile-avatar-logo-fallback" title="Default Profile Logo">
+                    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  </div>
+                  <span class="profile-online-badge" title="Active Community Member"></span>
+                </div>
+                <div class="profile-header-main">
+                  <div class="profile-header-top">
+                    <div>
+                      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        <h3 id="previewDisplayName" style="font-size: 1.35rem; margin: 0; color: var(--cream-100); font-weight: 700;">Member Profile</h3>
+                        <span class="meetup-tag" style="background: rgba(39, 174, 96, 0.15); color: #34d399; font-size: 0.72rem; padding: 2px 8px; font-weight: 600; border: 1px solid rgba(39, 174, 96, 0.3);">✓ Verified Member</span>
+                      </div>
+                      <div id="previewHandle" style="font-size: 0.84rem; color: var(--cream-300); margin-top: 3px;">Active Member · Outspire Community</div>
+                    </div>
+                    <div class="profile-header-actions">
+                      <button class="btn btn-secondary btn-sm" id="previewEditProfileBtn" type="button" title="View & edit your profile">
+                        <span>✏️ Edit Profile</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div id="previewMemberSince" class="profile-meta-row" style="margin-top: 4px;">
+                    <span>Manhattan, NY</span>
+                    <span>•</span>
+                    <span>Member since Nov 2025</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="profile-stats-row">
+                <div class="profile-stat-box" title="20 meetups attended">
+                  <strong id="previewStatMeetups">20</strong>
+                  <span>Meetups</span>
+                </div>
+                <div class="profile-stat-box" title="Verified table connections">
+                  <strong id="previewStatConnections" style="color: var(--cream-100);">3</strong>
+                  <span>Connections</span>
+                </div>
+                <div class="profile-stat-box" title="Show-Up Rating: 100% of booked meetups attended without missing">
+                  <strong id="previewStatReliability" style="color: #34d399;">100%</strong>
+                  <span>Show-Up Rating</span>
+                </div>
+                <div class="profile-stat-box" title="Friendly Vibe Rating: 98% positive vibe & friendly feedback from fellow table guests">
+                  <strong id="previewStatRating" style="color: #fbbf24;">98%</strong>
+                  <span>Friendly Vibe</span>
+                </div>
+              </div>
+
+              <div class="profile-bio-box" id="previewBioBox">
+                "Moved to Manhattan last year. Always down for morning park walks, trying neighborhood coffee spots, and playing table games with curious, friendly people."
+              </div>
+
+              <div style="margin-bottom: 16px;">
+                <div style="font-size: 0.8rem; font-weight: 700; color: var(--cream-200); text-transform: uppercase; margin-bottom: 6px;">
+                  Favorite Activities & Topics
+                </div>
+                <div class="profile-tags-row" style="display: flex; flex-wrap: wrap; gap: 6px;">
+                  <span class="meetup-tag">Park Walks & Dogs</span>
+                  <span class="meetup-tag">Board Games & Fun</span>
+                  <span class="meetup-tag">Books & Cinema</span>
+                  <span class="meetup-tag">Neighborhood Spots</span>
+                </div>
+              </div>
+
+              <!-- Endorsements from circle members -->
+              <div style="margin-bottom: 16px; background: rgba(227, 210, 186, 0.05); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 10px 14px;">
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--cream-300); text-transform: uppercase; margin-bottom: 6px;">
+                  Feedback Received from Table Members
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                  <span class="meetup-tag" style="background: rgba(245, 158, 11, 0.12); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.25); font-size: 0.74rem;">🌟 "Great listener & super friendly"</span>
+                  <span class="meetup-tag" style="background: rgba(39, 174, 96, 0.12); color: #27ae60; border: 1px solid rgba(39, 174, 96, 0.25); font-size: 0.74rem;">⏱️ "Always on time (100%)"</span>
+                  <span class="meetup-tag" style="background: rgba(16, 185, 129, 0.12); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.25); font-size: 0.74rem;">🛡️ "Safe Departure Verified"</span>
+                  <span class="meetup-tag" style="background: rgba(59, 130, 246, 0.12); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.25); font-size: 0.74rem;">🎲 "Brings great energy to games"</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 18px;">
+                <div style="font-size: 0.8rem; font-weight: 700; color: var(--cream-200); text-transform: uppercase; margin-bottom: 8px;">
+                  Connections (3)
+                </div>
+                <div class="profile-connections-grid">
+                  <div class="connection-member-card" data-profile-id="chris_brown" role="button" tabindex="0" title="Open Chris Brown's Profile">
+                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=120&q=80" alt="Chris Brown" class="connection-member-avatar" />
+                    <span class="connection-member-name">Chris Brown</span>
+                  </div>
+
+                  <div class="connection-member-card" data-profile-id="william_stone" role="button" tabindex="0" title="Open William Stone's Profile">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80" alt="William Stone" class="connection-member-avatar" />
+                    <span class="connection-member-name">William Stone</span>
+                  </div>
+
+                  <div class="connection-member-card" data-profile-id="luke_vance" role="button" tabindex="0" title="Open Luke Vance's Profile">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80" alt="Luke Vance" class="connection-member-avatar" />
+                    <span class="connection-member-name">Luke Vance</span>
+                  </div>
+                </div>
+
+                <div style="margin-top: 14px; display: flex; justify-content: flex-end;">
+                  <button class="btn btn-secondary btn-sm" id="viewFullProfileBtn">
+                    View Full Profile
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Real Member Feedback & Reviews -->
+          <div class="testimonials-column">
+            <div class="col-header-bar">
+              <span class="preview-badge" style="background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.3); color: #f59e0b;">
+                <span>💬</span> Feedback
+              </span>
+              <div style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #f59e0b;">
+                <span>★★★★★</span>
+                <strong style="color: var(--cream-100);">4.9 / 5.0</strong>
+                <span style="color: var(--text-muted); font-size: 0.78rem;">(1,200+ meetups)</span>
+              </div>
+            </div>
+
+            <div id="feedbackCardsList" style="display: flex; flex-direction: column; gap: 16px;">
+              <!-- Feedback Card 1 -->
+              <div class="testimonial-card">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 6px;">
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: #f59e0b; font-size: 0.95rem;">★★★★★</span>
+                    <strong style="font-size: 0.84rem; color: var(--cream-200);">5.0 · Sunday Park Walk</strong>
+                  </div>
+                  <span class="meetup-tag" style="background: rgba(39, 174, 96, 0.12); color: #27ae60; font-size: 0.7rem; padding: 2px 7px;">✓ Verified Attendance</span>
+                </div>
+                <p class="testimonial-quote">
+                  "I moved to NYC not knowing a single soul. Joining a 5-person Sunday park walk felt so effortless and genuine. No loud bar noise, just fresh air, great stories, and we still meet every month!"
+                </p>
+                <div class="testimonial-author" data-profile-id="elena_r" style="cursor: pointer;" title="Click to view Elena's profile">
+                  <img 
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" 
+                    alt="Elena R." 
+                    class="testimonial-avatar"
+                    loading="lazy"
+                    width="40"
+                    height="40"
+                  />
+                  <div>
+                    <strong style="color: var(--cream-100); font-size: 0.92rem;">Elena R.</strong>
+                    <div style="font-size: 0.78rem; color: var(--cream-300);">Teacher & Writer · Sunday Central Park Walk</div>
+                  </div>
+                  <div style="margin-left: auto; display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+                    <span style="font-size: 0.74rem; color: var(--text-muted);">2 days ago</span>
+                    <button type="button" class="btn btn-primary btn-xs btn-author-connect" data-profile-id="elena_r" title="Connect with Elena R.">
+                      <span>+ Connect</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Feedback Card 2 -->
+              <div class="testimonial-card">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 6px;">
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: #f59e0b; font-size: 0.95rem;">★★★★★</span>
+                    <strong style="font-size: 0.84rem; color: var(--cream-200);">5.0 · Board Games & Café</strong>
+                  </div>
+                  <span class="meetup-tag" style="background: rgba(39, 174, 96, 0.12); color: #27ae60; font-size: 0.7rem; padding: 2px 7px;">✓ Verified Attendance</span>
+                </div>
+                <p class="testimonial-quote">
+                  "As an introvert, big 50-person cocktail parties give me dread. Sitting down with 3 friendly strangers around a board game table with zero networking pressure changed everything for my confidence."
+                </p>
+                <div class="testimonial-author" data-profile-id="carl_j" style="cursor: pointer;" title="Click to view Carl's profile">
+                  <img 
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" 
+                    alt="Carl J." 
+                    class="testimonial-avatar"
+                    loading="lazy"
+                    width="40"
+                    height="40"
+                  />
+                  <div>
+                    <strong style="color: var(--cream-100); font-size: 0.92rem;">Carl J.</strong>
+                    <div style="font-size: 0.78rem; color: var(--cream-300);">Software Engineer · Weekend Board Games & Café</div>
+                  </div>
+                  <div style="margin-left: auto; display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+                    <span style="font-size: 0.74rem; color: var(--text-muted);">5 days ago</span>
+                    <button type="button" class="btn btn-primary btn-xs btn-author-connect" data-profile-id="carl_j" title="Connect with Carl J.">
+                      <span>+ Connect</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Feedback Card 3 -->
+              <div class="testimonial-card">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 6px;">
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: #f59e0b; font-size: 0.95rem;">★★★★★</span>
+                    <strong style="font-size: 0.84rem; color: var(--cream-200);">4.9 · Sunset Walk & Games</strong>
+                  </div>
+                  <span class="meetup-tag" style="background: rgba(39, 174, 96, 0.12); color: #27ae60; font-size: 0.7rem; padding: 2px 7px;">✓ Verified Attendance</span>
+                </div>
+                <p class="testimonial-quote">
+                  "The 3-hour flexible cancellation policy made me take the leap without anxiety. We spent two hours playing casual badminton in the park and grabbed ice cream after. Most fun weekend I've had in years!"
+                </p>
+                <div class="testimonial-author" data-profile-id="maya_p" style="cursor: pointer;" title="Click to view Maya's profile">
+                  <img 
+                    src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80" 
+                    alt="Maya P." 
+                    class="testimonial-avatar"
+                    loading="lazy"
+                    width="40"
+                    height="40"
+                  />
+                  <div>
+                    <strong style="color: var(--cream-100); font-size: 0.92rem;">Maya P.</strong>
+                    <div style="font-size: 0.78rem; color: var(--cream-300);">Brand Strategist · Sunset Walk & Outdoor Games</div>
+                  </div>
+                  <div style="margin-left: auto; display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+                    <span style="font-size: 0.74rem; color: var(--text-muted);">1 week ago</span>
+                    <button type="button" class="btn btn-primary btn-xs btn-author-connect" data-profile-id="maya_p" title="Connect with Maya P.">
+                      <span>+ Connect</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Leave Feedback Action Bar -->
+            <div style="margin-top: 14px; display: flex; align-items: center; justify-content: space-between; background: var(--bg-surface); padding: 12px 18px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); flex-wrap: wrap; gap: 10px;">
+              <span style="font-size: 0.85rem; color: var(--cream-200);">Joined an Outspire meetup recently?</span>
+              <button class="btn btn-primary btn-sm" id="leaveFeedbackBtn" style="padding: 6px 14px;">
+                ✍️ Give Feedback
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. Safety Guidelines & Comfort Guarantee
+         ======================================================================= -->
+    <section id="safety" class="safety-section" aria-labelledby="safetyTitle">
+      <div class="container" style="text-align: center;">
+        <span class="section-tag">Zero Pressure Guarantee</span>
+        <h2 id="safetyTitle" class="section-title">Your comfort and enjoyment are our first priority</h2>
+        <p class="section-desc" style="margin: 0 auto;">
+          Meeting new people requires psychological safety. Here is how we ensure every single gathering feels safe, respectful, and completely comfortable.
+        </p>
+
+        <div class="safety-grid" style="text-align: left;">
+          <div class="safety-card">
+            <div class="safety-icon">📍</div>
+            <h3 class="safety-title">100% Safe, Open Public Places</h3>
+            <p class="safety-desc">
+              Meetups happen wherever people love to gather—cafés, restaurants, playgrounds, parks, scenic walks, or community spaces. Every gathering takes place in open, trusted public spaces, ensuring complete safety, comfort, and peace of mind.
+            </p>
+          </div>
+
+          <div class="safety-card">
+            <div class="safety-icon">🛡️</div>
+            <h3 class="safety-title">Post-Meetup Safe Departure</h3>
+            <p class="safety-desc">
+              When a meetup ends, every attendee confirms in their meetup profile that they have safely moved out and departed the venue. Hosts and circle members verify everyone is safe before the meetup concludes.
+            </p>
+          </div>
+
+          <div class="safety-card">
+            <div class="safety-icon">⏱️</div>
+            <h3 class="safety-title">3-Hour Fair Cancellation</h3>
+            <p class="safety-desc">
+              Cancel free with a single tap up to 3 hours before the gathering starts. To protect hosts and ensure tables aren't left waiting, no cancellations are permitted within 3 hours.
+            </p>
+          </div>
+
+          <div class="safety-card">
+            <div class="safety-icon">🤝</div>
+            <h3 class="safety-title">Zero Tolerance Code of Conduct</h3>
+            <p class="safety-desc">
+              Harassment, unsolicited sales pitches, or pushy behavior result in immediate account removal. Every member agrees to our mutual respect pledge before booking.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         8. FAQ Accordion (Semantic details & summary)
+         ======================================================================= -->
+    <section id="faq" class="faq-section" aria-labelledby="faqTitle">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="section-tag">Common Questions</span>
+          <h2 id="faqTitle" class="section-title">Everything you need to know</h2>
+          <p class="section-desc" style="margin: 0 auto;">
+            Got a question before joining your first table? Here are answers to the most common questions from our community.
+          </p>
+        </div>
+
+        <div class="faq-container">
+          <details class="faq-item" open>
+            <summary class="faq-question">What if I feel awkward or shy meeting strangers?</summary>
+            <div class="faq-answer">
+              Feeling nervous is completely natural! That's why our tables are sized comfortably from 2 to 10 people, and our verified hosts gently break the ice. You don't have to entertain the table or speak non-stop; listening and enjoying the atmosphere is equally valued.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How does paying for food and beverages work?</summary>
+            <div class="faq-answer">
+              When you meet at the restaurant or café, each attendee simply covers their own personal food or beverage order directly with the venue. We don't pre-book dining packages or enforce set menus.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How does the 3-hour cancellation policy work?</summary>
+            <div class="faq-answer">
+              You can cancel your reservation with a single click in your dashboard up to 3 hours before the gathering starts. Within 3 hours of the meetup, cancellations lock so that hosts and fellow members are not left with empty tables.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How does the Safe Departure Check-In work?</summary>
+            <div class="faq-answer">
+              Your safety matters before, during, and after the meetup. When your gathering concludes, every attendee simply taps "Confirm Safe Departure" in their meetup profile. This notifies the host and fellow circle members that you've safely left the venue, giving everyone total peace of mind.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What happens after I reserve a seat?</summary>
+            <div class="faq-answer">
+              Once your seat is reserved, you unlock the private Table Group Chat! You can view fellow attendees, say a quick hello, and receive exact venue details and directions.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Who selects the meetup locations and venues?</summary>
+            <div class="faq-answer">
+              Hosts and members can choose any verified public spot they love—whether it's a neighborhood café, restaurant, playground, park, scenic walking route, or community space. We ensure every spot is safe, easy to find, and welcoming for conversation.
+            </div>
+          </details>
+        </div>
+
+        <!-- Simple Ask a Question Bar -->
+        <div class="faq-ask-simple-wrap" id="faqAskCard">
+          <form id="faqAskForm" class="faq-simple-form" novalidate>
+            <span class="faq-simple-icon" aria-hidden="true">💬</span>
+            <input 
+              type="text" 
+              id="faqAskInput" 
+              class="faq-simple-input" 
+              placeholder="Have a question? Type it here..." 
+              required
+            />
+            <button type="submit" class="btn btn-primary btn-sm faq-simple-submit-btn" id="faqAskSubmitBtn">
+              Ask ➔
+            </button>
+          </form>
+          <div id="faqAskResponse" class="faq-ask-response" style="display: none;" role="region" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       Footer Section
+       ========================================================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#hero" class="brand-logo" style="margin-bottom: 8px;">
+            <span class="brand-logo-text">Out<span class="brand-logo-accent">spire</span></span>
+          </a>
+          <p class="footer-brand-p">
+            Bringing strangers together in real-world spaces and turning unfamiliar moments into lively conversations, shared laughter, and lasting friendships.
+          </p>
+          <div>
+            <a href="mailto:outspire@gmail.com" class="footer-contact-pill" title="Send email to Outspire">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              <span>Contact: outspire@gmail.com</span>
+            </a>
+          </div>
+
+          <div class="footer-social-wrapper">
+            <div class="footer-social-label">Connect with us on social media</div>
+            <div class="footer-social-links" aria-label="Social media links">
+              <!-- Instagram -->
+              <a href="#" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram" aria-label="Outspire on Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="igFooterSocialGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#f09433"/>
+                      <stop offset="25%" stop-color="#e6683c"/>
+                      <stop offset="50%" stop-color="#dc2743"/>
+                      <stop offset="75%" stop-color="#cc2366"/>
+                      <stop offset="100%" stop-color="#bc1888"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="24" height="24" rx="6" fill="url(#igFooterSocialGrad)"/>
+                  <rect x="4.5" y="4.5" width="15" height="15" rx="4.2" stroke="#ffffff" stroke-width="1.8" fill="none"/>
+                  <circle cx="12" cy="12" r="3.6" stroke="#ffffff" stroke-width="1.8" fill="none"/>
+                  <circle cx="16.5" cy="7.5" r="1.1" fill="#ffffff"/>
+                </svg>
+              </a>
+              <!-- Facebook -->
+              <a href="#" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook" aria-label="Outspire on Facebook">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect width="24" height="24" rx="6" fill="#1877F2"/>
+                  <path d="M14.5 13.5h2.2l.4-2.8h-2.6v-1.8c0-.8.2-1.4 1.4-1.4h1.4V5c-.3 0-1.1-.1-2.1-.1-2.2 0-3.7 1.4-3.7 3.8v2.1H9v2.8h2.5V21c.5.1 1 .1 1.5.1s1 0 1.5-.1v-7.5z" fill="#ffffff"/>
+                </svg>
+              </a>
+              <!-- X (formerly Twitter) -->
+              <a href="#" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="X (Twitter)" aria-label="Outspire on X">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect width="24" height="24" rx="6" fill="#000000" stroke="rgba(227, 210, 186, 0.28)" stroke-width="1"/>
+                  <path transform="translate(3.6, 3.6) scale(0.7)" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="#ffffff"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">What Is Outspire</a></li>
+            <li><a href="#how-it-works" class="footer-link">How It Works</a></li>
+            <li><a href="#meetups" class="footer-link">Explore Meetups</a></li>
+            <li><a href="#quiz" class="footer-link">Questionnaire</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company & Trust</h4>
+          <ul class="footer-links">
+            <li><a href="#safety" class="footer-link">Safety Guidelines</a></li>
+            <li><a href="#community" class="footer-link">Community Code of Conduct</a></li>
+            <li><a href="#faq" class="footer-link">Help & FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Meetup Notifications</h4>
+          <p class="footer-newsletter-p">
+            Get notified whenever a new meetup is hosted in your area.
+          </p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input 
+              type="email" 
+              placeholder="Enter your email address" 
+              class="newsletter-input" 
+              required 
+              aria-label="Email address to get notified when new meetups are hosted in your area"
+            />
+            <button type="submit" class="btn btn-primary btn-sm">Get Notified</button>
+          </form>
+
+          <!-- Share Website Block -->
+          <div class="footer-share-website-block" style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--cream-100); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
+              <span>Share Outspire</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.45;">
+              Share our platform with friends to help more people meet and socialize offline.
+            </p>
+            <div class="footer-share-actions-row" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-secondary btn-sm footer-share-website-btn" id="footerColShareWebsiteBtn" title="Share Outspire website">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                  <polyline points="16 6 12 2 8 6"></polyline>
+                  <line x1="12" y1="2" x2="12" y2="15"></line>
+                </svg>
+                <span>Share Website</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Outspire Platform. All rights reserved. Designed with warm cream accents.</div>
+        <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+          <button type="button" class="btn-ghost btn-xs footer-share-website-btn" id="footerBottomShareWebsiteBtn" style="color: var(--cream-200); display: inline-flex; align-items: center; gap: 5px; font-size: 0.82rem; text-decoration: none; padding: 3px 10px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); background: transparent; cursor: pointer;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+              <polyline points="16 6 12 2 8 6"></polyline>
+              <line x1="12" y1="2" x2="12" y2="15"></line>
+            </svg>
+            <span>Share Website</span>
+          </button>
+          <a href="#" class="footer-link">Terms & Policy</a>
+          <a href="#" class="footer-link">Privacy Standards</a>
+          <a href="#" class="footer-link">Feedback</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       Interactive Modals & Dialogs (Native HTML5 <dialog>)
+       ========================================================================= -->
+
+  <!-- 0. Share Website Dialog (Global Platform Sharing) -->
+  <dialog id="shareWebsiteModal" class="custom-dialog" aria-labelledby="shareWebsiteModalTitle">
+    <div class="modal-card" style="max-width: 520px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(227, 210, 186, 0.12); border: 1px solid var(--cream-border); display: flex; align-items: center; justify-content: center; font-size: 1.15rem; color: var(--accent-gold);">
+            🌐
+          </div>
+          <div>
+            <h3 id="shareWebsiteModalTitle" style="font-size: 1.15rem; font-weight: 700; color: var(--cream-100); margin: 0;">Share Outspire Platform</h3>
+            <span style="font-size: 0.76rem; color: var(--cream-300);">Bring more people together in real-world spaces</span>
+          </div>
+        </div>
+        <button class="btn-icon modal-close-btn" id="closeShareWebsiteModalBtn" aria-label="Close dialog">✕</button>
+      </div>
+
+      <div class="modal-body" style="padding: 22px;">
+        <!-- Preview Card -->
+        <div class="share-preview-card" style="background: rgba(227, 210, 186, 0.05); border: 1px solid var(--cream-border); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+            <div style="width: 30px; height: 30px; border-radius: 50%; background: #171411; border: 1.5px solid var(--accent-gold); display: flex; align-items: center; justify-content: center; font-size: 0.88rem; font-weight: 700; color: var(--accent-gold);">
+              O
+            </div>
+            <div>
+              <strong style="color: var(--cream-100); font-size: 0.95rem;">Outspire Platform</strong>
+              <div style="font-size: 0.75rem; color: var(--accent-gold); font-weight: 600;">outspire.com · In-Person Social Meetups</div>
+            </div>
+          </div>
+          <p style="font-size: 0.84rem; color: var(--cream-200); line-height: 1.5; margin: 0;">
+            Bringing strangers together in real-world spaces for cafes, dining, sports, outdoors, and lasting friendships.
+          </p>
+        </div>
+
+        <!-- Copy Link Row -->
+        <div style="margin-bottom: 22px;">
+          <label style="display: block; font-size: 0.78rem; font-weight: 600; color: var(--cream-200); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em;">
+            Website Link:
+          </label>
+          <div style="display: flex; gap: 8px;">
+            <input 
+              type="text" 
+              id="shareWebsiteUrlInput" 
+              class="form-control" 
+              readonly 
+              value="https://outspire.com" 
+              style="flex: 1; font-size: 0.86rem; background: rgba(0, 0, 0, 0.35); border: 1px solid var(--cream-border); color: var(--cream-100); padding: 8px 12px; border-radius: var(--radius-sm);"
+            />
+            <button type="button" class="btn btn-primary btn-sm copy-website-url-btn" id="modalCopyWebsiteUrlBtn" style="white-space: nowrap; padding: 8px 16px; font-weight: 600;">
+              Copy Link
+            </button>
+          </div>
+        </div>
+
+        <!-- Social Share Channels Grid -->
+        <div>
+          <div style="font-size: 0.78rem; font-weight: 600; color: var(--cream-200); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.04em;">
+            Or Share Directly Via:
+          </div>
+          <div class="share-social-grid">
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20Outspire%20%E2%80%94%20join%20in-person%20meetups%2C%20cafes%2C%20and%20socializing%20with%20friendly%20strangers!%20https%3A%2F%2Foutspire.com" target="_blank" rel="noopener noreferrer" class="share-social-btn share-whatsapp-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path fill="#25D366" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/>
+                <path fill="#FFFFFF" d="M17.52 14.33c-.3-.15-1.78-.88-2.05-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.18.2-.35.23-.65.08-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51-.18-.01-.38-.01-.58-.01-.2 0-.53.08-.8.38-.28.3-1.05 1.04-1.05 2.51s1.08 2.92 1.23 3.12c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z"/>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=Check%20out%20Outspire%20%E2%80%94%20the%20platform%20for%20in-person%20meetups%20and%20social%20gatherings%20with%20strangers!&url=https%3A%2F%2Foutspire.com" target="_blank" rel="noopener noreferrer" class="share-social-btn share-twitter-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#1DA1F2" aria-hidden="true">
+                <path d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.936 4.936 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.936 9.936 0 0 0 24 4.59z"/>
+              </svg>
+              <span>Twitter</span>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="share-social-btn share-instagram-link" title="Share on Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="igModalGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#f09433"/>
+                    <stop offset="25%" stop-color="#e6683c"/>
+                    <stop offset="50%" stop-color="#dc2743"/>
+                    <stop offset="75%" stop-color="#cc2366"/>
+                    <stop offset="100%" stop-color="#bc1888"/>
+                  </linearGradient>
+                </defs>
+                <rect width="24" height="24" rx="6" fill="url(#igModalGrad)"/>
+                <rect x="4.5" y="4.5" width="15" height="15" rx="4.2" stroke="#ffffff" stroke-width="1.8" fill="none"/>
+                <circle cx="12" cy="12" r="3.6" stroke="#ffffff" stroke-width="1.8" fill="none"/>
+                <circle cx="16.5" cy="7.5" r="1.1" fill="#ffffff"/>
+              </svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://t.me/share/url?url=https%3A%2F%2Foutspire.com&text=Check%20out%20Outspire%20%E2%80%94%20join%20in-person%20meetups%20and%20socialize%20with%20friendly%20strangers!" target="_blank" rel="noopener noreferrer" class="share-social-btn share-telegram-link">
+              <span style="font-size: 1.15rem;">✈️</span>
+              <span>Telegram</span>
+            </a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Foutspire.com" target="_blank" rel="noopener noreferrer" class="share-social-btn share-linkedin-link">
+              <span style="font-size: 1.15rem;">💼</span>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Foutspire.com" target="_blank" rel="noopener noreferrer" class="share-social-btn share-facebook-link">
+              <span style="font-size: 1.15rem;">👥</span>
+              <span>Facebook</span>
+            </a>
+            <a href="mailto:?subject=Join%20me%20on%20Outspire%20%E2%80%94%20In-Person%20Meetups&body=Hey!%20Check%20out%20Outspire%20%E2%80%94%20it%27s%20a%20platform%20for%20joining%20in-person%20meetups%2C%20cafes%2C%20and%20gatherings%20with%20great%20people.%20Take%20a%20look%3A%20https%3A%2F%2Foutspire.com" class="share-social-btn share-email-link">
+              <span style="font-size: 1.15rem;">✉️</span>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer" style="padding: 14px 22px; justify-content: flex-end;">
+        <button class="btn btn-secondary btn-sm" id="closeShareWebsiteModalFooterBtn">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 1. Meetup Reservation Modal (Detail View & Reservation Flow) -->
+  <dialog id="reservationModal" class="custom-dialog" aria-labelledby="modalMeetupTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalMeetupTitle" style="font-size: 1.25rem;">Meetup Group Page</h3>
+        <button class="btn-icon modal-close-btn" aria-label="Close dialog">✕</button>
+      </div>
+      <div class="modal-body" id="modalMeetupContent">
+        <!-- Content populated dynamically by app.js -->
+      </div>
+      <div class="modal-footer" id="modalMeetupFooter">
+        <!-- Buttons injected dynamically by app.js -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 1c. Surprise Meetup Matcher Dialog -->
+  <dialog id="surpriseMeetupModal" class="custom-dialog surprise-custom-dialog" aria-labelledby="surpriseModalTitle">
+    <div class="modal-card surprise-modal-card">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.35rem;">🎁</span>
+          <div>
+            <h3 id="surpriseModalTitle" style="font-size: 1.2rem; font-weight: 700; color: var(--cream-100); margin: 0;">Surprise Meetup</h3>
+            <span style="font-size: 0.76rem; color: var(--cream-300); font-weight: 500;">Tailored Personality Matchmaking</span>
+          </div>
+        </div>
+        <button class="btn-icon modal-close-btn" id="closeSurpriseModalBtn" aria-label="Close dialog">✕</button>
+      </div>
+      <div class="modal-body" id="surpriseModalContent">
+        <!-- Injected dynamically by triggerSurpriseMeetup() -->
+      </div>
+      <div class="modal-footer" id="surpriseModalFooter">
+        <!-- Buttons injected dynamically by triggerSurpriseMeetup() -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 1b. Table Centerpiece Meetup Games Modal (Socializing Games at Venue) -->
+  <dialog id="meetupGamesModal" class="custom-dialog table-games-dialog" aria-labelledby="gameModalTitle">
+    <div class="modal-card table-game-modal-card">
+      <div class="table-game-header">
+        <div class="table-game-meta">
+          <div class="table-live-badge">
+            <span class="pulse-dot"></span> LIVE TABLE CENTERPIECE
+          </div>
+          <h3 id="gameModalTitle" class="table-venue-heading">Meetup Games</h3>
+        </div>
+        <div class="table-header-actions">
+          <button class="game-tool-btn" id="gameSoundToggleBtn" title="Toggle Sound (Mute/Unmute)" aria-label="Toggle Sound">
+            <span id="soundIcon">🔊</span>
+          </button>
+          <button class="game-tool-btn" id="gameRotateBtn" title="Rotate card 180° for players across table" aria-label="Rotate text 180 degrees">
+            🔄 Rotate 180°
+          </button>
+          <button class="btn-icon modal-close-btn" id="closeGamesModalBtn" aria-label="Close game">✕</button>
+        </div>
+      </div>
+
+      <!-- Placement Reminder Banner -->
+      <div class="table-centerpiece-banner">
+        <div class="centerpiece-banner-icon">📱</div>
+        <div class="centerpiece-banner-text">
+          <strong>Keep phone flat in the middle of the table</strong> — everyone plays from this screen!
+        </div>
+      </div>
+
+      <!-- Game Mode Navigation Tabs -->
+      <div class="table-game-mode-tabs" id="gameModeTabs" role="tablist" aria-label="Game Modes">
+        <button class="table-mode-tab active" data-mode="compass" role="tab" aria-selected="true">🧭 Table Compass</button>
+        <button class="table-mode-tab" data-mode="hottakes" role="tab" aria-selected="false">🔥 Hot Takes</button>
+        <button class="table-mode-tab" data-mode="twotruths" role="tab" aria-selected="false">🤫 2 Truths & Dream</button>
+        <button class="table-mode-tab" data-mode="rapidfire" role="tab" aria-selected="false">⚡ Rapid Fire</button>
+        <button class="table-mode-tab" data-mode="deepdive" role="tab" aria-selected="false">✨ Deeper Waters</button>
+      </div>
+
+      <!-- Active Game Arena Stage -->
+      <div class="table-game-stage" id="tableGameStage">
+        <!-- Injected dynamically by app.js based on selected game mode -->
+      </div>
+
+      <!-- Game Footer Controls -->
+      <div class="table-game-bottom-bar" id="tableGameBottomBar">
+        <!-- Injected dynamically by app.js -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 2. Cancellation Confirmation Dialog (from Wireframe: "Are you sure you want to cancel?") -->
+  <dialog id="cancelConfirmModal" class="custom-dialog" aria-labelledby="cancelTitle">
+    <div class="modal-card" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3 id="cancelTitle" style="font-size: 1.2rem; color: var(--status-danger);">Cancel Reservation?</h3>
+        <button class="btn-icon modal-close-btn" aria-label="Close dialog">✕</button>
+      </div>
+      <div class="modal-body" style="text-align: center; padding: 28px 20px;">
+        <div style="font-size: 2.2rem; margin-bottom: 12px;">⚠️</div>
+        <p style="font-size: 1.05rem; font-weight: 600; margin-bottom: 8px;">
+          Are you sure you want to cancel?
+        </p>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
+          If you change your mind, your seat will be immediately released to other waiting members.
+        </p>
+      </div>
+      <div class="modal-footer" style="justify-content: center; gap: 14px;">
+        <button class="btn btn-secondary btn-sm" id="keepReservationBtn">No, let it be</button>
+        <button class="btn btn-danger btn-sm" id="confirmCancelBtn">Yes, Cancel</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Delete Single History Item Modal -->
+  <dialog id="deleteHistoryItemModal" class="custom-dialog" aria-labelledby="deleteHistoryTitle">
+    <div class="modal-card" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3 id="deleteHistoryTitle" style="font-size: 1.15rem; color: var(--cream-100);">Delete from History?</h3>
+        <button class="btn-icon modal-close-btn" aria-label="Close dialog">✕</button>
+      </div>
+      <div class="modal-body" style="text-align: center; padding: 24px 20px;">
+        <div style="font-size: 2.2rem; margin-bottom: 10px;">🗑️</div>
+        <p style="font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; color: var(--cream-100);" id="deleteHistoryItemName">
+          Remove this gathering?
+        </p>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+          This gathering will be removed from your personal history list.
+        </p>
+      </div>
+      <div class="modal-footer" style="justify-content: center; gap: 12px;">
+        <button class="btn btn-secondary btn-sm" id="btnCancelDeleteHistoryItem">No, Keep It</button>
+        <button class="btn btn-danger btn-sm" id="btnConfirmDeleteHistoryItem">Yes, Delete</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Clear All History Modal -->
+  <dialog id="clearHistoryConfirmModal" class="custom-dialog" aria-labelledby="clearHistoryTitle">
+    <div class="modal-card" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3 id="clearHistoryTitle" style="font-size: 1.15rem; color: var(--status-danger);">Clear Entire History?</h3>
+        <button class="btn-icon modal-close-btn" aria-label="Close dialog">✕</button>
+      </div>
+      <div class="modal-body" style="text-align: center; padding: 24px 20px;">
+        <div style="font-size: 2.2rem; margin-bottom: 10px;">⚠️</div>
+        <p style="font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; color: var(--cream-100);">
+          Are you sure you want to clear your history?
+        </p>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;" id="clearHistoryDescText">
+          All your joined and hosted gatherings will be deleted from your history records. This cannot be undone.
+        </p>
+      </div>
+      <div class="modal-footer" style="justify-content: center; gap: 12px;">
+        <button class="btn btn-secondary btn-sm" id="btnCancelClearAllHistory">Keep History</button>
+        <button class="btn btn-danger btn-sm" id="btnConfirmClearAllHistory">Yes, Clear Everything</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 3. Member Profile Modal (Tom's Profile & Attendee Profiles) -->
+  <dialog id="profileModal" class="custom-dialog" aria-labelledby="profileModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="profileModalTitle" style="font-size: 1.2rem;">Member Profile</h3>
+        <button class="btn-icon modal-close-btn" aria-label="Close dialog">✕</button>
+      </div>
+      <div class="modal-body" id="profileModalContent">
+        <!-- Profile info rendered by app.js -->
+      </div>
+      <div class="modal-footer" id="profileModalFooter">
+        <button class="btn btn-secondary btn-sm modal-close-btn">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 4. Sign In / Sign Up Modal (Wireframe Credentials Screens) -->
+  <dialog id="authModal" class="custom-dialog" aria-labelledby="authTitle">
+    <div class="modal-card" style="max-width: 440px; margin: auto;">
+      <div class="modal-header" style="padding: 16px 20px 12px;">
+        <div>
+          <h3 id="authTitle" style="font-size: 1.2rem; margin: 0;">Sign Up to Continue</h3>
+          <p id="authSubtitle" style="font-size: 0.82rem; color: var(--text-muted); margin-top: 3px; margin-bottom: 0;">Create an account to save your profile & unlock matches</p>
+        </div>
+        <button class="btn-icon modal-close-btn" aria-label="Close dialog">✕</button>
+      </div>
+      <div class="modal-body" style="padding: 14px 22px 20px; max-height: none; overflow: visible;">
+        <div style="display: flex; border-bottom: 1px solid var(--border-subtle); margin-bottom: 14px;">
+          <button class="auth-tab-btn" data-mode="signin" type="button">
+            Sign In
+          </button>
+          <button class="auth-tab-btn active" data-mode="signup" type="button">
+            Sign Up
+          </button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+          <button class="btn btn-secondary btn-sm" id="googleAuthBtn" type="button" style="justify-content: center; gap: 6px; padding: 9px 10px; font-size: 0.86rem;">
+            <span>🌐</span> Google
+          </button>
+          <button class="btn btn-secondary btn-sm" id="appleAuthBtn" type="button" style="justify-content: center; gap: 6px; padding: 9px 10px; font-size: 0.86rem;">
+            <span></span> Apple
+          </button>
+        </div>
+
+        <div style="text-align: center; color: var(--text-muted); font-size: 0.78rem; margin-bottom: 12px; position: relative;">
+          <span style="background: var(--bg-surface); padding: 0 10px; position: relative; z-index: 1;">Or enter details</span>
+        </div>
+
+        <form id="authForm">
+          <div class="form-group" id="authNameGroup" style="display: flex; flex-direction: column; gap: 5px; margin-bottom: 11px;">
+            <label class="form-label" for="authName">Full Name</label>
+            <input type="text" id="authName" class="form-input" placeholder="e.g. Izhan Khan" style="padding: 10px 14px;" />
+          </div>
+
+          <div class="form-group" id="authAvatarGroup" style="display: flex; flex-direction: column; gap: 5px; margin-bottom: 11px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <label class="form-label" for="authAvatar" style="margin: 0;">Profile Photo <span class="optional">(Optional)</span></label>
+              <button type="button" class="btn btn-ghost btn-sm" id="authSamplePhotoBtn" style="font-size: 0.72rem; padding: 2px 8px; color: var(--accent-gold);">+ Sample Photo</button>
+            </div>
+            <input type="url" id="authAvatar" class="form-input" placeholder="Paste image URL (or leave blank for profile logo)" style="padding: 10px 14px;" />
+          </div>
+
+          <div class="form-group" style="display: flex; flex-direction: column; gap: 5px; margin-bottom: 11px;">
+            <label class="form-label" for="authEmail">Email Address</label>
+            <input type="email" id="authEmail" class="form-input" placeholder="you@example.com" required style="padding: 10px 14px;" />
+          </div>
+
+          <div class="form-group" style="display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <label class="form-label" for="authPassword" style="margin: 0;">Password</label>
+              <a href="#" style="font-size: 0.76rem; color: var(--cream-300);">Forgot password?</a>
+            </div>
+            <input type="password" id="authPassword" class="form-input" placeholder="Enter your password" required style="padding: 10px 14px;" />
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="authSubmitBtn" style="width: 100%; padding: 11px; font-weight: 700;">
+            Sign Up & Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 5. Leave Meetup Feedback Modal -->
+  <dialog id="feedbackModal" class="custom-dialog" aria-labelledby="feedbackModalTitle">
+    <div class="modal-card" style="max-width: 480px; margin: auto;">
+      <div class="modal-header" style="padding: 16px 20px 12px;">
+        <div>
+          <h3 id="feedbackModalTitle" style="font-size: 1.2rem; margin: 0;">Share Meetup Feedback</h3>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 3px; margin-bottom: 0;">Tell us how your circle or activity went</p>
+        </div>
+        <button class="btn-icon modal-close-btn" aria-label="Close dialog">✕</button>
+      </div>
+      <div class="modal-body" style="padding: 14px 22px 20px;">
+        <form id="feedbackForm">
+          <div class="form-group" style="margin-bottom: 14px;">
+            <label class="form-label">Overall Rating</label>
+            <div style="display: flex; gap: 8px; font-size: 1.4rem; color: #f59e0b; cursor: pointer;">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+          </div>
+          <div class="form-group" style="display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px;">
+            <label class="form-label" for="feedbackAuthorName">Your Name</label>
+            <input type="text" id="feedbackAuthorName" class="form-input" placeholder="e.g. Izhan Khan" style="padding: 10px 14px;" />
+          </div>
+          <div class="form-group" style="display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px;">
+            <label class="form-label" for="feedbackMeetupSelect">Which meetup did you attend?</label>
+            <select id="feedbackMeetupSelect" class="form-input" style="padding: 10px 14px;">
+              <option value="Sunday Central Park Walk">Sunday Central Park Walk & Coffee</option>
+              <option value="Weekend Board Games & Café">Greenwich Village Board Games</option>
+              <option value="Prospect Park Casual Sports">Prospect Park Casual Sports</option>
+              <option value="Weekend Coffee & Books">Weekend Coffee & Books at SoHo</option>
+              <option value="Evening Walk on the High Line">Evening Walk on the High Line</option>
+            </select>
+          </div>
+          <div class="form-group" style="display: flex; flex-direction: column; gap: 5px; margin-bottom: 16px;">
+            <label class="form-label" for="feedbackComment">Your Feedback & Experience</label>
+            <textarea id="feedbackComment" class="form-input" rows="3" placeholder="How was the group? Was the location comfortable? Any highlights?" required style="padding: 10px 14px;"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 11px; font-weight: 700;">
+            Submit Feedback
+          </button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 7. Custom Cover Photo Modal -->
+  <dialog id="customPhotoModal" class="custom-dialog" aria-labelledby="customPhotoModalTitle">
+    <div class="modal-card" style="max-width: 500px; margin: auto;">
+      <div class="modal-header" style="padding: 16px 20px 12px; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.3rem;">📷</span>
+          <div>
+            <h3 id="customPhotoModalTitle" style="font-size: 1.15rem; margin: 0; color: var(--cream-100); font-weight: 700;">Add Your Own Cover Photo</h3>
+            <p style="font-size: 0.8rem; color: var(--cream-300); margin: 2px 0 0;">Upload an image or paste a photo URL</p>
+          </div>
+        </div>
+        <button class="btn-icon modal-close-btn" id="closeCustomPhotoModalBtn" aria-label="Close dialog">✕</button>
+      </div>
+
+      <div class="modal-body" style="padding: 16px 20px 20px;">
+        <!-- Tabs -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px;">
+          <button type="button" class="btn btn-sm btn-secondary" id="tabUploadFile" style="justify-content: center; font-weight: 700; background: rgba(227, 210, 186, 0.16); border-color: var(--cream-300); color: var(--cream-100);">
+            📁 Upload From Device
+          </button>
+          <button type="button" class="btn btn-sm btn-secondary" id="tabPasteUrl" style="justify-content: center; font-weight: 700;">
+            🔗 Paste Image URL
+          </button>
+        </div>
+
+        <!-- Section 1: File Upload Dropzone -->
+        <div id="sectionUploadFile">
+          <div class="custom-file-dropzone" id="customPhotoDropzone">
+            <input type="file" id="hostCoverFileInput" accept="image/*" style="display: none;" />
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--cream-300)" stroke-width="2" style="margin: 0 auto 10px; display: block;">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+            <div style="font-size: 0.94rem; font-weight: 700; color: var(--cream-100); margin-bottom: 4px;">Click to Browse Image</div>
+            <div style="font-size: 0.78rem; color: var(--cream-300);">or drag & drop your image here (JPG, PNG, WebP)</div>
+          </div>
+        </div>
+
+        <!-- Section 2: URL Input -->
+        <div id="sectionPasteUrl" style="display: none;">
+          <label class="form-label" for="customPhotoUrlInput" style="font-size: 0.85rem; margin-bottom: 6px;">Image Web Address (URL):</label>
+          <div style="display: flex; gap: 8px;">
+            <input 
+              type="url" 
+              id="customPhotoUrlInput" 
+              class="form-control" 
+              placeholder="https://images.unsplash.com/photo-..." 
+              style="padding: 10px 12px; font-size: 0.88rem;"
+            />
+            <button type="button" class="btn btn-secondary btn-sm" id="btnPreviewPhotoUrl" style="flex-shrink: 0; padding: 0 16px;">Preview</button>
+          </div>
+          <small style="font-size: 0.75rem; color: var(--cream-300); display: block; margin-top: 6px;">
+            Paste any direct link or Unsplash photo URL.
+          </small>
+        </div>
+
+        <!-- Selected Preview Area -->
+        <div id="customPhotoPreviewArea" style="display: none; margin-top: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--cream-200); text-transform: uppercase; letter-spacing: 0.5px;">Preview</span>
+            <span style="font-size: 0.75rem; color: #34d399;">✓ Ready to apply</span>
+          </div>
+          <div style="aspect-ratio: 16/9; max-height: 180px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--cream-border); background: #000;">
+            <img id="customPhotoPreviewImgElement" src="" alt="Custom cover preview" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+          <button type="button" class="btn btn-ghost btn-sm" id="btnCancelCustomPhoto">Cancel</button>
+          <button type="button" class="btn btn-primary btn-sm" id="btnApplyCustomPhoto" disabled>Use This Photo</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Chat Drawer Overlay -->
+  <div class="chat-drawer-overlay" id="chatDrawerOverlay" aria-hidden="true"></div>
+
+  <!-- 6. Slide-Over Post-Booking Group Chat Drawer -->
+  <aside id="chatDrawer" class="chat-drawer" aria-label="Table Group Chat">
+    <div class="chat-drawer-header">
+      <div style="flex-grow: 1; min-width: 0;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <h4 style="font-size: 1.05rem; margin-bottom: 0;">Group Chat</h4>
+          <span class="chat-header-live-badge" id="chatHeaderLiveBadge"><span class="badge-dot"></span> Live Circle</span>
+        </div>
+        <div id="chatMeetupTitle" style="font-size: 0.8rem; color: var(--cream-300); text-overflow: ellipsis; white-space: nowrap; overflow: hidden; margin-top: 3px;">Select a meetup group</div>
+      </div>
+      <button class="btn-icon" id="closeChatBtn" aria-label="Close chat drawer" style="margin-left: 12px; flex-shrink: 0;">✕</button>
+    </div>
+
+    <!-- Multi-Group Switcher Tabs Bar (Visible when user has joined multiple groups) -->
+    <div id="chatGroupTabsBar" class="chat-group-tabs-bar" style="display: none;"></div>
+
+    <div class="chat-messages-container" id="chatMessagesList">
+      <!-- Chat bubbles injected by app.js -->
+    </div>
+
+    <!-- Quick Starter Prompt Chips -->
+    <div class="chat-quick-replies" id="drawerQuickReplies">
+      <button type="button" class="chat-quick-chip" data-msg="👋 Hey everyone, so excited for this meetup!">👋 Say Hello</button>
+      <button type="button" class="chat-quick-chip" data-msg="📍 Looking forward to meeting you all at the venue!">📍 Confirm Spot</button>
+      <button type="button" class="chat-quick-chip" data-msg="⏰ I'll be arriving right on time!">⏰ On-Time</button>
+      <button type="button" class="chat-quick-chip" data-msg="🥐 Anyone have favorite menu tips or recommendations?">🥐 Menu Tips</button>
+    </div>
+
+    <form class="chat-input-row" id="chatInputForm">
+      <input 
+        type="text" 
+        id="chatMessageInput" 
+        placeholder="Say something to your table..." 
+        autocomplete="off" 
+        required
+      />
+      <button type="submit" class="btn btn-primary btn-sm">Send</button>
+    </form>
+  </aside>
+
+  <!-- Floating Meetup Group Chat Widget (Bottom-Right Corner) -->
+  <div id="floatingChatWidget" class="floating-chat-widget" role="region" aria-label="Meetup Group Chat">
+    <div class="floating-chat-tooltip" id="floatingChatTooltip">
+      <span class="chat-tooltip-beacon"></span>
+      <span id="floatingChatTooltipText" class="chat-tooltip-text">Meetup Group Chat</span>
+    </div>
+    <button 
+      type="button" 
+      id="btnFloatingChat" 
+      class="btn-floating-chat" 
+      aria-label="Open Meetup Group Chat" 
+      title="Open Meetup Group Chat"
+    >
+      <span class="chat-pulse-beacon" id="floatingChatPulseBeacon" style="display: none;"></span>
+      <span class="chat-badge-counter" id="floatingChatBadge" style="display: none;">0</span>
+      <svg class="chat-logo-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- =========================================================================
+       Right-Side Slide-Over Questionnaire Page Drawer
+       ========================================================================= -->
+  <div class="quiz-drawer-overlay" id="quizDrawerOverlay" aria-hidden="true"></div>
+  <aside id="quizSideDrawer" class="quiz-side-drawer" role="dialog" aria-label="Personality Questionnaire" aria-hidden="true">
+    <div class="quiz-drawer-header">
+      <div class="quiz-drawer-header-left">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="quiz-drawer-icon" style="font-size: 1.1rem;">📋</span>
+          <h3 class="quiz-drawer-title">Personality Matcher</h3>
+        </div>
+        <div class="quiz-drawer-subtitle">
+          <span class="badge-status-completed">✓ Questionnaire Completed</span>
+          <span class="quiz-drawer-step-info" id="drawerStepIndicator">19 of 19 answered</span>
+        </div>
+      </div>
+      <button class="btn-icon quiz-drawer-close-btn" id="closeQuizDrawerBtn" aria-label="Close Questionnaire panel">✕</button>
+    </div>
+
+    <!-- Quick Navigation Bar between Stepper & Summary -->
+    <div class="quiz-drawer-nav-bar">
+      <button class="quiz-drawer-tab active" id="drawerWizardTab">Interactive Stepper</button>
+      <button class="quiz-drawer-tab" id="drawerSummaryTab">Review All 19 Answers</button>
+    </div>
+
+    <div class="quiz-drawer-body" id="quizDrawerBody">
+      <!-- Renders current question step or summary here via JavaScript -->
+    </div>
+  </aside>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="leaflet.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

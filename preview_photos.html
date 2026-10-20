@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photo Selection Preview — Outspire</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #171411;
+      color: #F7F1E6;
+      padding: 40px 20px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      color: #E3D2BA;
+    }
+    p {
+      color: #BDB4A8;
+      margin-bottom: 40px;
+      text-align: center;
+      max-width: 600px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 36px;
+      max-width: 1100px;
+      width: 100%;
+    }
+    .card {
+      background: #211D19;
+      border: 1px solid rgba(227, 210, 186, 0.25);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    }
+    .card img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-body {
+      padding: 24px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #E3D2BA;
+      background: rgba(227, 210, 186, 0.12);
+      padding: 4px 10px;
+      border-radius: 99px;
+      margin-bottom: 12px;
+    }
+    .title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+    }
+    .desc {
+      font-size: 0.95rem;
+      color: #A89F91;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <h1>Select Your Preferred Hero Photo</h1>
+  <p>Compare both options below for the full-frame hero section of Outspire. Tell me whether you prefer <strong>Option 1</strong> or <strong>Option 2</strong>!</p>
+
+  <div class="grid">
+    <!-- Option 1 -->
+    <div class="card">
+      <img src="candidate-option-1-cafe.jpg" alt="Option 1: Sunlit Daytime Café Meetup">
+      <div class="card-body">
+        <span class="tag">Option 1</span>
+        <div class="title">Sunlit Daytime Café Gathering</div>
+        <div class="desc">A relaxed daytime coffee meetup with 4 diverse young adults laughing together at a wooden café table with artisan coffees, croissants, and warm natural sunlight.</div>
+      </div>
+    </div>
+
+    <!-- Option 2 -->
+    <div class="card">
+      <img src="candidate-option-2-dinner.jpg" alt="Option 2: Intimate Evening Bistro Dinner">
+      <div class="card-body">
+        <span class="tag">Option 2</span>
+        <div class="title">Intimate Evening Bistro Dinner</div>
+        <div class="desc">A warm, vibrant evening dinner meetup with 5 smiling friends sharing tapas and wine glasses under cozy fairy lights and candle glow.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
